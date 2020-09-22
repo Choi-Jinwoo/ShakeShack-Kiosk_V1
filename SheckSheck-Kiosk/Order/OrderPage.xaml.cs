@@ -1,5 +1,4 @@
-﻿using SheckSheck_Kiosk.Order;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,18 +14,16 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace SheckSheck_Kiosk
+namespace SheckSheck_Kiosk.Order
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// OrderPage.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OrderPage : Page
     {
-        public MainWindow()
+        public OrderPage()
         {
             InitializeComponent();
-            OrderPage orderPage = new OrderPage();
-            this.Content = orderPage;
         }
     }
 }

@@ -14,14 +14,14 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace SheckSheck_Kiosk.Order
+namespace SheckSheck_Kiosk.Common
 {
     /// <summary>
-    /// OrderControl.xaml에 대한 상호 작용 논리
+    /// TitleControl.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class OrderControl : UserControl
+    public partial class TitleControl : UserControl
     {
-        public OrderControl()
+        public TitleControl()
         {
             InitializeComponent();
             clock.Content = DateTime.Now.ToString();
@@ -41,5 +41,9 @@ namespace SheckSheck_Kiosk.Order
             timer.Start();
         }
 
+        private void btnHomePage_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Pass");
+        }
     }
 }
