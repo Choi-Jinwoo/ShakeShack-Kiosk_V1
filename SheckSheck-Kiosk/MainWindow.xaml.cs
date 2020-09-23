@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SheckSheck_Kiosk.Home;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,10 @@ namespace SheckSheck_Kiosk
         public MainWindow()
         {
             InitializeComponent();
+            HomePage homePage = new HomePage();
+            test test = new test();
+            this.Content = homePage;
+
         }
     }
 }
