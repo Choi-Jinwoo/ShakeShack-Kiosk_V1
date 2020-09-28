@@ -1,4 +1,5 @@
 ﻿using SheckSheck_Kiosk.Order;
+using SheckSheck_Kiosk.Order.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,8 +26,7 @@ namespace SheckSheck_Kiosk
         public MainWindow()
         {
             InitializeComponent();
-            OrderPage orderPage = new OrderPage();
-            this.Content = orderPage;
+            CategoryDAO categoryDAO = new CategoryDAO();
         }
     }
 }

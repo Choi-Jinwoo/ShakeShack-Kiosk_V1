@@ -25,13 +25,13 @@ namespace SheckSheck_Kiosk.Common
         {
             InitializeComponent();
             clock.Content = DateTime.Now.ToString();
-            setClockEvent();
+            SetClockEvent();
         }
 
         /// <summary>
         /// Clock의 이벤트 설정
         /// </summary>
-        private void setClockEvent()
+        private void SetClockEvent()
         {
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 1);
@@ -43,7 +43,7 @@ namespace SheckSheck_Kiosk.Common
 
         private void btnHomePage_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Pass");
+            // TODO: Page 전환
         }
     }
 }
