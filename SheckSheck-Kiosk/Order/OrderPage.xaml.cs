@@ -1,6 +1,4 @@
-﻿using SheckSheck_Kiosk.Order;
-using SheckSheck_Kiosk.Order.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,17 +14,16 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace SheckSheck_Kiosk
+namespace SheckSheck_Kiosk.Order
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// OrderPage.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OrderPage : Page
     {
-        public MainWindow()
+        public OrderPage()
         {
             InitializeComponent();
-            CategoryDAO categoryDAO = new CategoryDAO();
         }
     }
 }
