@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\ShackShack-Kiosk\SheckSheck-Kiosk\obj\Debug\
+C:\Users\최진우\Documents\Source\CSharp\ShackShack-Kiosk\SheckSheck-Kiosk\obj\Debug\
 SheckSheck_Kiosk
 none
 false
 DEBUG;TRACE
-E:\ShackShack-Kiosk\SheckSheck-Kiosk\App.xaml
+C:\Users\최진우\Documents\Source\CSharp\ShackShack-Kiosk\SheckSheck-Kiosk\App.xaml
 4-710516142
 
 14817284585
-1201432617075
+1251148753040
 ChoicePay\ChoicePay.xaml;Common\TitleControl.xaml;MainWindow.xaml;Order\OrderPage.xaml;
 
-False
+True
 
