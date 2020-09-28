@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+﻿using MySqlConnector;
 using SheckSheck_Kiosk.Config;
 using System;
 using System.Collections.Generic;
