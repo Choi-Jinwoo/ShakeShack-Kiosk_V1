@@ -16,6 +16,7 @@ namespace SheckSheck_Kiosk.Util
         public void Connect()
         {
             string strDBConnection = DBConfig.GetDBConnectionString();
+            Console.WriteLine(strDBConnection);
             connection = new MySqlConnection(strDBConnection);
         }
 

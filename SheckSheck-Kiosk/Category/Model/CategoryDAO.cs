@@ -6,22 +6,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SheckSheck_Kiosk.Order.Model
+namespace SheckSheck_Kiosk.Category.Model
 {
     class CategoryDAO
     {
-        public List<Category> GetCategories()
+        public List<CategoryModel> GetCategories()
         {
             DBConnection connection = new DBConnection();
             connection.Connect();
             connection.OpenConnection();
-            connection.SetCommand(OrderSQLMapper.getCategoriesSQL);
+            connection.SetCommand(CategorySQLMapper.GetCategoriesSQL);
             MySqlDataReader reader = connection.ExecuteQuery();
 
-            List<Category> categories = new List<Category>();
+            List<CategoryModel> categories = new List<CategoryModel>();
             while (reader.Read())
             {
-                Category category = new Category();
+                CategoryModel category = new CategoryModel();
                 category.Id = Convert.ToInt32(reader["id"]);
                 category.Name = Convert.ToString(reader["name"]);
                 categories.Add(category);

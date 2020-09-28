@@ -1,5 +1,5 @@
-﻿using SheckSheck_Kiosk.Order;
-using SheckSheck_Kiosk.Order.Model;
+﻿using SheckSheck_Kiosk.Category.Model;
+using SheckSheck_Kiosk.Order;
 using System;
 using System.Collections.Generic;
 using System.Linq;

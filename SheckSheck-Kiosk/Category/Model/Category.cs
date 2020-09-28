@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SheckSheck_Kiosk.Order.Model
+namespace SheckSheck_Kiosk.Category.Model
 {
-    class Category
+    public class CategoryModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

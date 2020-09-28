@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SheckSheck_Kiosk.Category.Model;
+using SheckSheck_Kiosk.Order.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +23,17 @@ namespace SheckSheck_Kiosk.Order
     /// </summary>
     public partial class OrderPage : Page
     {
+        private readonly OrderService orderService = new OrderService();
+
         public OrderPage()
         {
             InitializeComponent();
+            Loaded += OrderPage_Loaded;
+        }
+
+        private void OrderPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            lvCategory.ItemsSource = orderService.Categories;
         }
     }
 }
