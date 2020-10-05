@@ -187,10 +187,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ChoicePay\logo.png" />
-    <Resource Include="Assets\logo.png" />
+    <Resource Include="Assets\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\media\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Home\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
