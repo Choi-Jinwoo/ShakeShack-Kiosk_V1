@@ -33,7 +33,7 @@
                     Height="970"
                     Points="1,2 2,2 2,1"
                     Fill="#61b146"
-                    Opacity="0.3"
+                    Opacity="0.5"
                     Stretch="Fill"/>
 
                 <Image 
@@ -70,15 +70,14 @@
                 </TextBlock>
 
                 <Border 
-                    Background="#61b146" 
-                    Width="400"
+                    Background="#61b146"
                     Height="80"
                     CornerRadius="20" 
-                    Margin="100,760,100,240">
+                    Margin="50,750,50,250">
 
                     <Button 
                         Background="#61b146" 
-                        Width="360"
+                        Width="462"
                         Height="80"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Bottom"
@@ -88,7 +87,7 @@
                         Content="주문하기"
                         BorderBrush="#61b146"
                         BorderThickness="2"
-                        Click="btnOrder_Click"/>
+                        Click="btnOrder_Click" Margin="19,0"/>
                 </Border>
             </Grid>
         </Grid>
