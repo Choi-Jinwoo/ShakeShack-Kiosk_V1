@@ -11,10 +11,12 @@
     <Grid Background="#ffffff">
         <Grid Height="250" Background="#61b146" VerticalAlignment="Top">
             <MediaElement 
-            x:Name="myMedia"
-            Source="Assets/media/ash.mp4"
-            LoadedBehavior="Manual" 
-/>
+                x:Name="myMedia"
+                Source="Assets/media/ShakeShackStory.mp4"
+                LoadedBehavior="Play"
+                UnloadedBehavior="Manual"
+                MediaEnded="myMedia_MediaEnded"
+            />
         </Grid>
 
         <Grid Height="200" Background="#ededed" VerticalAlignment="Bottom">

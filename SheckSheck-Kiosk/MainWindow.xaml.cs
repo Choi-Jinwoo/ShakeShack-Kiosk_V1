@@ -25,9 +25,7 @@ namespace SheckSheck_Kiosk
         {
             InitializeComponent();
             HomePage homePage = new HomePage();
-            test test = new test();
             this.Content = homePage;
-
         }
     }
 }

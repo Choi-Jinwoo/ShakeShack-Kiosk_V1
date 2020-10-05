@@ -31,5 +31,11 @@ namespace SheckSheck_Kiosk.Home
             NavigationService.Navigate(new Uri("/Home/test.xaml", UriKind.Relative));
         }
 
+        private void myMedia_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            myMedia.Stop();
+            myMedia.Position = TimeSpan.FromSeconds(0);
+            myMedia.Play();
+        }
     }
 }
