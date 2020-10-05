@@ -109,15 +109,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Category\Service\CategoryService.cs" />
     <Compile Include="Config\DBConfig.cs" />
-    <Compile Include="Order\Service\OrderService.cs" />
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Dao\CategoryDao.cs" />
+    <Compile Include="Model\Dao\SQLMapper\CategorySQLMapper.cs" />
+    <Compile Include="Model\Dao\FoodDao.cs" />
+    <Compile Include="Model\Dao\SQLMapper\FoodSQLMapper.cs" />
+    <Compile Include="Model\Food.cs" />
     <Compile Include="Util\DBConnection.cs" />
+    <Compile Include="ViewModel\OrderViewModel.cs" />
+    <Compile Include="View\OrderView.xaml.cs">
+      <DependentUpon>OrderView.xaml</DependentUpon>
+    </Compile>
     <Page Include="ChoicePay\ChoicePay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Common\TitleControl.xaml">
+    <Page Include="Control\TitleControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -132,25 +140,19 @@
     <Compile Include="ChoicePay\ChoicePay.xaml.cs">
       <DependentUpon>ChoicePay.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Common\TitleControl.xaml.cs">
+    <Compile Include="Control\TitleControl.xaml.cs">
       <DependentUpon>TitleControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Order\OrderPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="View\OrderView.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category\Model\Category.cs" />
-    <Compile Include="Category\Model\CategoryDAO.cs" />
-    <Compile Include="Order\OrderPage.xaml.cs">
-      <DependentUpon>OrderPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Category\SQLMapper\CategorySQLMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -189,8 +191,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\SheckSheck-Kiosk\v16\" />
-    <Folder Include="bin\Debug\" />
-    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

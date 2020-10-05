@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SheckSheck_Kiosk.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,18 +13,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
 
-namespace SheckSheck_Kiosk
+namespace SheckSheck_Kiosk.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// OrderView.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OrderView : Page
     {
-        public MainWindow()
+        public OrderView()
         {
             InitializeComponent();
+
+            this.DataContext = new OrderViewModel();
         }
     }
 }

@@ -18,12 +18,9 @@ namespace SheckSheck_Kiosk.Util
             string strDBConnection = DBConfig.GetDBConnectionString();
             Console.WriteLine(strDBConnection);
             connection = new MySqlConnection(strDBConnection);
-        }
-
-        public void OpenConnection()
-        {
             connection.Open();
         }
+
         public void CloseConnection()
         {
             connection.Close();
