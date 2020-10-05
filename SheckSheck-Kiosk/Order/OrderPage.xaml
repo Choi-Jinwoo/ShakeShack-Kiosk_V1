@@ -8,6 +8,7 @@
       Title="OrderPage">
 
     <Grid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="363,179,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 
 </Page>

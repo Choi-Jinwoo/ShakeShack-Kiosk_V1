@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SheckSheck_Kiosk.Order;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,25 @@ namespace SheckSheck_Kiosk.ChoicePay
     /// <summary>
     /// Interaction logic for ChoicePay.xaml
     /// </summary>
-    public partial class ChoicePay : UserControl
+    public partial class ChoicePay : Page
     {
         public ChoicePay()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (NavigationService.CanGoForward) //앞으로 이동 가능하다면 그냥 ㄱㄱ 
+            { 
+                NavigationService.GoForward(); 
+            } 
+            else 
+            { 
+                OrderPage orderPage = new OrderPage();
+                NavigationService.Navigate(orderPage); }
+
+            
         }
     }
 }

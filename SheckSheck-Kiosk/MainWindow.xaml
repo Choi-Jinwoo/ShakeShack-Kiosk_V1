@@ -8,10 +8,12 @@
         Title="MainWindow" Height="450" Width="800">
 
     <Grid>
+        <Frame Name="frame" Grid.Row="1" NavigationUIVisibility="Hidden" Source="ChoicePay/ChoicePay.xaml"></Frame>
+
+        
         <StackPanel>
             <common:TitleControl />
-            <Frame Source="/Order/OrderPage.xaml"
-                   NavigationUIVisibility="Hidden"></Frame>
+           
         </StackPanel>
     </Grid>
 </Window>
