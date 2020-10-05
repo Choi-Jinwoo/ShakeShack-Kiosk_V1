@@ -21,7 +21,7 @@
             />
 
             <Grid 
-                Background="White"
+                Background="#ffffff"
                 Width="600"
                 Height="1080"
                 HorizontalAlignment="Right">
@@ -73,7 +73,8 @@
                     Background="#61b146" 
                     Width="400"
                     Height="80"
-                    CornerRadius="20" Margin="100,760,100,240">
+                    CornerRadius="20" 
+                    Margin="100,760,100,240">
 
                     <Button 
                         Background="#61b146" 
@@ -82,6 +83,8 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Bottom"
                         FontSize="25"
+                        FontWeight="Bold"
+                        Foreground="#ffffff"
                         Content="주문하기"
                         BorderBrush="#61b146"
                         BorderThickness="2"
