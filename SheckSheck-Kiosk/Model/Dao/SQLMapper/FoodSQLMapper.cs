@@ -11,7 +11,7 @@ namespace SheckSheck_Kiosk.Model.Dao.SQLMapper
         public static string FindAllSQL = "SELECT id, category_id, name, image_path, price FROM food;";
         public static string FindAllByCategorySQL(int categoryId) 
         {
-            return string.Format("SELECT id, category_id, name, image_path, price FROM food WHERE ${0};", categoryId);
+            return string.Format("SELECT id, category_id, name, image_path, price FROM food WHERE category_id = {0};", categoryId);
         }
     }
 }
