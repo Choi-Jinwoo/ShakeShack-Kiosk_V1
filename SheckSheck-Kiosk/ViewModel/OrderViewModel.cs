@@ -19,7 +19,7 @@ namespace SheckSheck_Kiosk.ViewModel
         public List<Category> Categories { get; set; }
         public List<Food> Foods { get; set; }
         public int PageCount { get; set; } = 0;
-        public Category SelectedCategory;
+        public Category SelectedCategory { get; set; }
 
         public OrderViewModel()
         {
