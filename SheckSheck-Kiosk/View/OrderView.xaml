@@ -72,7 +72,7 @@
                          ItemsSource="{Binding Foods}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal" />
+                            <UniformGrid Columns="3" Rows="3" />
                         </ItemsPanelTemplate>
                     </ListBox.ItemsPanel>
 
@@ -110,12 +110,18 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical">
-                                <Label x:Name="lbFood" Content="{Binding Name}" />
-                                <Image Source="Assets/logo.png" />
+                                <Label x:Name="lbFoodName" Content="{Binding Name}" />
+                                <Label x:Name="lbFoodPrice" Content="{Binding Price}" />
+                                <Image Source="{Binding ImagePath}" />
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="btnPreItem" Click="btnPreItem_Click" Content="이전" Width="80"/>
+                    <Button x:Name="btnNextItem" Click="btnNextItem_Click"  Content="다음" Width="80"/>
+                </StackPanel>
             </StackPanel>
         </Grid>
     </Grid>
