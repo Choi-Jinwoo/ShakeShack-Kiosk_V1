@@ -195,5 +195,15 @@
   <ItemGroup>
     <Folder Include=".vs\SheckSheck-Kiosk\v16\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\FoodImage\ChiknShack.jpg" />
+    <Resource Include="Assets\FoodImage\GochujagChickn.jpg" />
+    <Resource Include="Assets\FoodImage\GochujagShack.jpg" />
+    <Resource Include="Assets\FoodImage\Ham.jpg" />
+    <Resource Include="Assets\FoodImage\Shack.jpg" />
+    <Resource Include="Assets\FoodImage\ShackStack.jpg" />
+    <Resource Include="Assets\FoodImage\Shroom.jpg" />
+    <Resource Include="Assets\FoodImage\SmokeShack.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

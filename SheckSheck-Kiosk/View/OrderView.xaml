@@ -109,7 +109,10 @@
 
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Button x:Name="btnFood" Content="{Binding Name}" />
+                            <StackPanel Orientation="Vertical">
+                                <Label x:Name="lbFood" Content="{Binding Name}" />
+                                <Image Source="Assets/logo.png" />
+                            </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
