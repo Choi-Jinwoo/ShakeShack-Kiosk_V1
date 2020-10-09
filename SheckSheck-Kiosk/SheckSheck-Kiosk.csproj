@@ -119,6 +119,7 @@
     <Compile Include="Model\Dao\FoodDao.cs" />
     <Compile Include="Model\Dao\SQLMapper\FoodSQLMapper.cs" />
     <Compile Include="Model\Food.cs" />
+    <Compile Include="Model\OrderFood.cs" />
     <Compile Include="Util\DBConnection.cs" />
     <Compile Include="ViewModel\OrderViewModel.cs" />
     <Compile Include="View\OrderView.xaml.cs">

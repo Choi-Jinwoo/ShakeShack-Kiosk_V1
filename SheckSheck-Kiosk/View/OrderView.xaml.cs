@@ -81,5 +81,31 @@ namespace SheckSheck_Kiosk.View
                 orderViewModel.PageCount += 1;
             }
         }
+
+        private void lbFood_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lbFood.SelectedIndex == -1) return;
+
+            Food food = (Food)lbFood.SelectedItem;
+
+            // 주문 음식에 추가
+            orderViewModel.addOrderFood(food);
+        }
+
+        private void btnIncreaseOrderFood_Click(object sender, RoutedEventArgs e)
+        {
+            Button btnIncraseOrderFood = (Button)sender;
+            OrderFood orderFood = (OrderFood)btnIncraseOrderFood.DataContext;
+
+            orderViewModel.increaseOrderFoodCount(orderFood);
+        }
+
+        private void btnDecreaseOrderFood_Click(object sender, RoutedEventArgs e)
+        {
+            Button btnDecraseOrderFood = (Button)sender;
+            OrderFood orderFood = (OrderFood)btnDecraseOrderFood.DataContext;
+
+            orderViewModel.decreaseOrderFoodCount(orderFood);
+        }
     }
 }

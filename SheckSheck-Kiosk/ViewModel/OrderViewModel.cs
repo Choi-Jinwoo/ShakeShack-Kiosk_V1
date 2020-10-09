@@ -2,7 +2,9 @@
 using SheckSheck_Kiosk.Model.Dao;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,6 +22,8 @@ namespace SheckSheck_Kiosk.ViewModel
         public List<Food> Foods { get; set; }
         public int PageCount { get; set; } = 0;
         public Category SelectedCategory { get; set; }
+        public ObservableCollection<OrderFood> OrderFoods { get; set; } = new ObservableCollection<OrderFood>();
+
 
         public OrderViewModel()
         {
@@ -45,5 +49,30 @@ namespace SheckSheck_Kiosk.ViewModel
                                 .Skip(skipCount)
                                 .Take(takeCount)
                                 .ToList();
+        public void addOrderFood(Food food)
+        {
+            foreach (OrderFood orderFood in OrderFoods)
+            {
+                if (orderFood.Food.Equals(food)) return;
+            }
+
+            OrderFood newOrderFood = new OrderFood() { Food = food };
+            OrderFoods.Add(newOrderFood);
+        }
+        public void increaseOrderFoodCount(OrderFood orderFood)
+        {
+            orderFood.Count += 1;
+        }
+        public void decreaseOrderFoodCount(OrderFood orderFood)
+        {
+            // 주문 개수가 1개 이하인 주문음식을 경우
+            if (orderFood.Count <= 1)
+            {
+                OrderFoods.Remove(orderFood);
+            } else
+            {
+                orderFood.Count -= 1;
+            }
+        }
     }
 }
