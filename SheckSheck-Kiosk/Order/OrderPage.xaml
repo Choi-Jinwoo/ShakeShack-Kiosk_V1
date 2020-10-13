@@ -3,12 +3,36 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="OrderPage">
+      mc:Ignorable="d"
+      Title="OrderPage" Height="584.733" Width="748.838">
 
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="363,179,0,0" VerticalAlignment="Top" Width="75"/>
+    <Grid Margin="-38,0,-173.2,-0.2">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="9" HorizontalAlignment="Left" Margin="526,385,0,0" VerticalAlignment="Top" Width="118" Height="117" FontSize="45" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="8" HorizontalAlignment="Left" Margin="337,385,0,0" VerticalAlignment="Top" Width="118" Height="117" FontSize="45"/>
+        <Button Content="6" HorizontalAlignment="Left" Margin="526,221,0,0" VerticalAlignment="Top" Width="118" Height="117" FontSize="45"/>
+        <Button Content="5" HorizontalAlignment="Left" Margin="337,221,0,0" VerticalAlignment="Top" Width="118" Height="117" FontSize="45"/>
+        <Button Content="4" HorizontalAlignment="Left" Margin="145,221,0,0" VerticalAlignment="Top" Width="118" Height="117" FontSize="45"/>
+        <Button Content="3" HorizontalAlignment="Left" Margin="526,64,0,0" VerticalAlignment="Top" Width="118" Height="117" FontSize="45"/>
+        <Button Content="2" HorizontalAlignment="Left" Margin="339,64,0,0" VerticalAlignment="Top" Width="118" Height="117" FontSize="45"/>
+        <Button Content="1" HorizontalAlignment="Left" Margin="145,64,0,0" VerticalAlignment="Top" Width="118" Height="117" FontSize="45"/>
+        <Button Content="7" HorizontalAlignment="Left" Margin="145,385,0,0" VerticalAlignment="Top" Width="118" Height="117" FontSize="45"/>
+        <Button Content="뒤로가기" HorizontalAlignment="Left" Margin="48,37,0,0" VerticalAlignment="Top" Width="75" Click="backToMain" Height="19"/>
+        <Button Content="다음" HorizontalAlignment="Left" Margin="680,507,0,0" VerticalAlignment="Top" Width="75" Height="37" FontSize="20" Click="goToPayPage"/>
     </Grid>
 
 </Page>

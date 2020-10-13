@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SheckSheck_Kiosk.ChoicePay;
+using SheckSheck_Kiosk.PayPage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +26,34 @@ namespace SheckSheck_Kiosk.Order
         public OrderPage()
         {
             InitializeComponent();
+        }
+
+        private void backToMain(object sender, RoutedEventArgs e)
+        {
+            if (NavigationService.CanGoForward) {
+                NavigationService.GoForward(); 
+            }
+            else {
+                ChoicePay.ChoicePay choicepay = new ChoicePay.ChoicePay();
+                NavigationService.Navigate(choicepay); }
+
+        
+
+
+
+        }
+
+        private void goToPayPage(object sender, RoutedEventArgs e)
+        {
+            if (NavigationService.CanGoForward)
+            {
+                NavigationService.GoForward();
+            }
+            else
+            {
+                YIDong paypage = new YIDong();
+                NavigationService.Navigate(paypage);
+            }
         }
     }
 }
