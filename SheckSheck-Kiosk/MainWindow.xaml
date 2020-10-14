@@ -10,8 +10,9 @@
     <Grid>
         <StackPanel>
             <common:TitleControl />
-            <Frame Source="/Order/OrderPage.xaml"
-                   NavigationUIVisibility="Hidden"></Frame>
+            <Frame x:Name="mainframe"
+                   Source="Home/HomePage.xaml"
+                   NavigationUIVisibility="Hidden"/>
         </StackPanel>
     </Grid>
 </Window>

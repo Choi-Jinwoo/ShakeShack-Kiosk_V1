@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace SheckSheck_Kiosk.Home
 {
@@ -21,14 +22,19 @@ namespace SheckSheck_Kiosk.Home
     public partial class HomePage : Page
     {
         public HomePage()
-        {
+        {  
             InitializeComponent();
             myMedia.Play();
         }
 
         private void btnOrder_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Home/test.xaml", UriKind.Relative));
+        }
+
+        private void Button_Click_Manager(object sender, RoutedEventArgs e)
+        {
+            Manager1 manager = new Manager1();
+            manager.Show();
         }
 
         private void myMedia_MediaEnded(object sender, RoutedEventArgs e)

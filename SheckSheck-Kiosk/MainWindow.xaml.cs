@@ -13,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using System.Windows.Threading;
+
 
 namespace SheckSheck_Kiosk
 {
@@ -24,8 +27,18 @@ namespace SheckSheck_Kiosk
         public MainWindow()
         {
             InitializeComponent();
-            HomePage homePage = new HomePage();
-            this.Content = homePage;
+            this.PreviewKeyDown += MainWindow_PreviewKeyDown;
+
         }
+
+        private void MainWindow_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F2)
+            {
+                Manager1 manager = new Manager1();
+                manager.Show();
+            }
+        }
+
     }
 }

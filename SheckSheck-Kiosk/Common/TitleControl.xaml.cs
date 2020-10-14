@@ -44,6 +44,7 @@ namespace SheckSheck_Kiosk.Common
         private void btnHomePage_Click(object sender, RoutedEventArgs e)
         {
             // TODO: Page 전환
+            
         }
     }
 }
