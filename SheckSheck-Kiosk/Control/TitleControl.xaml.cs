@@ -33,9 +33,6 @@ namespace SheckSheck_Kiosk.Control
             SetClockEvent();
         }
 
-        /// <summary>
-        /// Clock의 이벤트 설정
-        /// </summary>
         private void SetClockEvent()
         {
             DispatcherTimer timer = new DispatcherTimer();

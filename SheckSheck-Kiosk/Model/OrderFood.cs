@@ -12,24 +12,38 @@ namespace SheckSheck_Kiosk.Model
     class OrderFood : INotifyPropertyChanged
     {
         public Food Food { get; set; }
-        private int count { get; set; } = 1;
+        private int count = 1;
         public int Count { get { return count; }
             set
             {
                 count = value;
                 OnPropertyChanged("Count");
+                TotalPrice = Food.Price * Count;
+            }
+        }
+        private int totalPrice = 0;
+        public int TotalPrice { get { return totalPrice; }
+            set
+            {
+                totalPrice = value;
+                OnPropertyChanged("TotalPrice");
             }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void OnPropertyChanged(string name)
+        private void OnPropertyChanged(string name)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
+            if (PropertyChanged != null)
             {
-                handler(this, new PropertyChangedEventArgs(name));
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
+        }
+
+        public OrderFood(Food food)
+        {
+            this.Food = food;
+            TotalPrice = Food.Price * Count;
         }
     }
 }

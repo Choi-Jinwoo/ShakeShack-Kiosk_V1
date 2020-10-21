@@ -27,45 +27,44 @@ namespace SheckSheck_Kiosk.View
         private const int MAX_FOOD_ITEM_COUNT = 9;
 
         private OrderViewModel orderViewModel = new OrderViewModel();
+        private OrderFoodViewModel orderFoodViewModel = OrderFoodViewModel.Instance;
 
         public OrderView()
         {
             InitializeComponent();
 
-            this.DataContext = orderViewModel;
-
             // 가장 처음 카테고리로 리스트박스 초기화
             if (orderViewModel.Categories.Count > 0)
             {
-                lbFood.ItemsSource = orderViewModel.GetSelectedCategoryFoods(MAX_FOOD_ITEM_COUNT).ToList();
+                lstFood.ItemsSource = orderViewModel.GetSelectedCategoryFoods(MAX_FOOD_ITEM_COUNT).ToList();
             }
+            lstCategory.ItemsSource = orderViewModel.Categories;
+            dgOrderFood.ItemsSource = orderFoodViewModel.OrderFoods;
+            tbTotalPrice.DataContext = orderFoodViewModel;
         }
 
-        private void lbCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void lstCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (lbCategory.SelectedIndex == -1) return;
+            if (lstCategory.SelectedIndex == -1) return;
 
-            Category category = (Category)lbCategory.SelectedItem;
+            Category category = (Category)lstCategory.SelectedItem;
 
             orderViewModel.PageCount = 0;
             orderViewModel.SelectedCategory = category;
-            lbFood.ItemsSource = orderViewModel.GetSelectedCategoryFoods(MAX_FOOD_ITEM_COUNT).ToList();
+            lstFood.ItemsSource = orderViewModel.GetSelectedCategoryFoods(MAX_FOOD_ITEM_COUNT).ToList();
         }
-
         private void btnPreItem_Click(object sender, RoutedEventArgs e)
         {
             int pageCount = orderViewModel.PageCount;
 
             if (pageCount > 0)
             {
-                lbFood.ItemsSource = orderViewModel.GetSelectedCategoryFoods(
+                lstFood.ItemsSource = orderViewModel.GetSelectedCategoryFoods(
                     (pageCount - 1) * MAX_FOOD_ITEM_COUNT,
-                    MAX_FOOD_ITEM_COUNT)
-                    .ToList();
+                    MAX_FOOD_ITEM_COUNT).ToList();
                 orderViewModel.PageCount -= 1;
             }
         }
-
         private void btnNextItem_Click(object sender, RoutedEventArgs e)
         {
             int pageCount = orderViewModel.PageCount;
@@ -74,30 +73,28 @@ namespace SheckSheck_Kiosk.View
 
             if (categoryFoods.Count > MAX_FOOD_ITEM_COUNT * (pageCount + 1))
             {
-                lbFood.ItemsSource = orderViewModel.GetSelectedCategoryFoods(
+                lstFood.ItemsSource = orderViewModel.GetSelectedCategoryFoods(
                     (pageCount + 1) * MAX_FOOD_ITEM_COUNT,
-                    MAX_FOOD_ITEM_COUNT)
-                    .ToList();
+                    MAX_FOOD_ITEM_COUNT).ToList();
                 orderViewModel.PageCount += 1;
             }
         }
-
-        private void lbFood_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void lstFood_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (lbFood.SelectedIndex == -1) return;
+            if (lstFood.SelectedIndex == -1) return;
 
-            Food food = (Food)lbFood.SelectedItem;
+            Food food = (Food)lstFood.SelectedItem;
 
             // 주문 음식에 추가
-            orderViewModel.addOrderFood(food);
+            orderFoodViewModel.AddOrderFood(food);
+            lstFood.SelectedIndex = -1;
         }
-
         private void btnIncreaseOrderFood_Click(object sender, RoutedEventArgs e)
         {
             Button btnIncraseOrderFood = (Button)sender;
             OrderFood orderFood = (OrderFood)btnIncraseOrderFood.DataContext;
 
-            orderViewModel.increaseOrderFoodCount(orderFood);
+            orderFoodViewModel.IncreaseOrderFood(orderFood);
         }
 
         private void btnDecreaseOrderFood_Click(object sender, RoutedEventArgs e)
@@ -105,7 +102,29 @@ namespace SheckSheck_Kiosk.View
             Button btnDecraseOrderFood = (Button)sender;
             OrderFood orderFood = (OrderFood)btnDecraseOrderFood.DataContext;
 
-            orderViewModel.decreaseOrderFoodCount(orderFood);
+            orderFoodViewModel.DecreaseOrderFood(orderFood);
+        }
+        private void btnDeleteOrderFood_Click(object sender, RoutedEventArgs e)
+        {
+            Button btnDeleteOrderFood = (Button)sender;
+            OrderFood orderFood = (OrderFood)btnDeleteOrderFood.DataContext;
+
+            orderFoodViewModel.RemoveOrderFood(orderFood);
+        }
+        private void btnDeleteAllOrderFood_Click(object sender, RoutedEventArgs e)
+        {
+            // 주문음식이 존재할 경우
+            if (orderFoodViewModel.OrderFoodSize > 0)
+            {
+                if (MessageBox.Show( "주문 내용이 취소됩니다", "ShakeShack", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    orderFoodViewModel.RemoveAllOrderFood();
+                }
+            }
+        }
+        private void btnOrder_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/View/DiningAreaView.xaml", UriKind.Relative));
         }
     }
 }

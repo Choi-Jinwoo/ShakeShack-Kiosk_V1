@@ -7,6 +7,7 @@
         xmlns:common="clr-namespace:SheckSheck_Kiosk.Control"
         Title="MainWindow" Height="450" Width="800">
 
+
     <Grid>
         <StackPanel>
             <common:TitleControl />
