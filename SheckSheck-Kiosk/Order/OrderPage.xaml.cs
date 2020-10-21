@@ -1,4 +1,6 @@
-﻿using SheckSheck_Kiosk.ChoicePay;
+﻿
+using SheckSheck_Kiosk.CardPay;
+using SheckSheck_Kiosk.ChoicePay;
 using SheckSheck_Kiosk.PayPage;
 using System;
 using System.Collections.Generic;
@@ -39,8 +41,6 @@ namespace SheckSheck_Kiosk.Order
 
         
 
-
-
         }
 
         private void goToPayPage(object sender, RoutedEventArgs e)
@@ -51,9 +51,12 @@ namespace SheckSheck_Kiosk.Order
             }
             else
             {
-                YIDong paypage = new YIDong();
-                NavigationService.Navigate(paypage);
+            PayCard payCard = new PayCard();
+                NavigationService.Navigate(payCard);
             }
         }
+        }
+
+        
     }
-}
+
