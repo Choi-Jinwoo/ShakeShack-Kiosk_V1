@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Security.Certificates;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -8,8 +9,10 @@ using System.Windows.Threading;
 
 namespace SheckSheck_Kiosk.Model
 {
-    class Table : INotifyPropertyChanged
+    class DiningTable : INotifyPropertyChanged
     {
+        private const int EXPIRE_SECOND = 5;
+
         public int Number { get; set; }
         private DateTime paidAt { get; set; }
         public DateTime PaidAt { 
@@ -18,7 +21,10 @@ namespace SheckSheck_Kiosk.Model
             {
                 paidAt = value;
                 OnPropertyChanged("PaidAt");
-                ExpireAt = PaidAt.AddMinutes(1);
+                ExpireAt = PaidAt.AddSeconds(EXPIRE_SECOND);
+                RemainSeconds = EXPIRE_SECOND;
+                IsUsing = true;
+                SetRemainTimerEvent();
             }
         }
         private DateTime expireAt { get; set; }
@@ -33,17 +39,41 @@ namespace SheckSheck_Kiosk.Model
         private int remainSeconds { get; set; }
         public int RemainSeconds
         {
-            get {
-                return Convert.ToInt32(ExpireAt.Subtract(PaidAt).TotalSeconds);
-            }
+            get => remainSeconds;
             set
             {
                 remainSeconds = value;
                 OnPropertyChanged("RemainSeconds");
             }
         }
+        private bool isUsing { get; set; } = false;
+        public bool IsUsing 
+        {
+            get => isUsing;
+            set
+            {
+                isUsing = value;
+                OnPropertyChanged("IsUsing");
+            }
+        }
+
+        private void SetRemainTimerEvent()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += new EventHandler((object sender, EventArgs e) => {
+                if (RemainSeconds <= 0)
+                {
+                    timer.Stop();
+                    IsUsing = false;
+                }
+                RemainSeconds -= 1;
+            });
+            timer.Start();
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         private void OnPropertyChanged(string name)
         {
             if (PropertyChanged != null)

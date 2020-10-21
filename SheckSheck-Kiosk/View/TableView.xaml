@@ -4,13 +4,19 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SheckSheck_Kiosk.View"
+      xmlns:converter="clr-namespace:SheckSheck_Kiosk.Converter"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="TableView">
 
+    <Page.Resources>
+        <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    </Page.Resources>
+
     <Grid>
         <StackPanel>
-            <ListBox x:Name="lstTable">
+            <ListBox x:Name="lstTable"
+                     SelectionChanged="lstTable_SelectionChanged">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <UniformGrid Columns="3" Rows="3" />
@@ -20,9 +26,12 @@
                     <DataTemplate>
                         <StackPanel>
                             <Label Content="{Binding Number}" />
-                            <Label Content="{Binding RemainSeconds}" />
-                            <Label Content="{Binding PaidAt}" />
-                            <Label Content="{Binding ExpireAt}" />
+                            <Label Visibility="{Binding IsUsing, Converter={StaticResource BoolToVisibilityConverter}}"
+                                   Content="{Binding RemainSeconds}" />
+                            <Label Visibility="{Binding IsUsing, Converter={StaticResource BoolToVisibilityConverter}}"
+                                   Content="{Binding PaidAt}" />
+                            <Label Visibility="{Binding IsUsing, Converter={StaticResource BoolToVisibilityConverter}}"
+                                   Content="{Binding ExpireAt}" />
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate> 
@@ -30,9 +39,9 @@
             <Button x:Name="btnPrePage"
                     Content="이전"
                     Click="btnPrePage_Click"/>
-            <Button x:Name="btnPaymentPage"
+            <Button x:Name="btnPaymentView"
                     Content="다음"
-                    Click="btnPaymentPage_Click"/>
+                    Click="btnPaymentView_Click"/>
         </StackPanel>
     </Grid>
 </Page>

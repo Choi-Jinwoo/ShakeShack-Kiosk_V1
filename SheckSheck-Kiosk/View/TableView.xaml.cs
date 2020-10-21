@@ -1,4 +1,5 @@
-﻿using SheckSheck_Kiosk.ViewModel;
+﻿using SheckSheck_Kiosk.Model;
+using SheckSheck_Kiosk.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,9 +37,20 @@ namespace SheckSheck_Kiosk.View
             }
         }
 
-        private void btnPaymentPage_Click(object sender, RoutedEventArgs e)
+        private void btnPaymentView_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/View/PaymentPage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/View/PaymentView.xaml", UriKind.Relative));
+        }
+
+        private void lstTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lstTable.SelectedIndex == -1) return;
+
+            DiningTable table = (DiningTable)lstTable.SelectedItem;
+
+            table.PaidAt = DateTime.Now;
+
+            lstTable.SelectedIndex = -1;
         }
     }
 }

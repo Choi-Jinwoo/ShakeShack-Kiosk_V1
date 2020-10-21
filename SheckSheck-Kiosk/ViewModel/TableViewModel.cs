@@ -24,17 +24,17 @@ namespace SheckSheck_Kiosk.ViewModel
             }
         }
 
-        public List<Table> tables = new List<Table>( new Table[]
+        public List<DiningTable> tables = new List<DiningTable>( new DiningTable[]
         {
-            new Table() {Number=1},
-            new Table() {Number=2},
-            new Table() {Number=3},
-            new Table() {Number=4},
-            new Table() {Number=5},
-            new Table() {Number=6},
-            new Table() {Number=7},
-            new Table() {Number=8},
-            new Table() {Number=9},
+            new DiningTable() {Number=1},
+            new DiningTable() {Number=2},
+            new DiningTable() {Number=3},
+            new DiningTable() {Number=4},
+            new DiningTable() {Number=5},
+            new DiningTable() {Number=6},
+            new DiningTable() {Number=7},
+            new DiningTable() {Number=8},
+            new DiningTable() {Number=9},
         });
         
     }
