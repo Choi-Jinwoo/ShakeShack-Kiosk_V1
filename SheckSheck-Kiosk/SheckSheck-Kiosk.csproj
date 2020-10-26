@@ -112,6 +112,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CardPay\PayCard.xaml.cs">
+      <DependentUpon>PayCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Config\DBConfig.cs" />
     <Compile Include="Converter\BoolToVisibilityConverter.cs" />
     <Compile Include="Model\Category.cs" />
@@ -122,6 +125,35 @@
     <Compile Include="Model\Food.cs" />
     <Compile Include="Model\OrderFood.cs" />
     <Compile Include="Model\DiningTable.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\App.g.cs" />
+    <Compile Include="obj\Debug\App.g.i.cs" />
+    <Compile Include="obj\Debug\CardPay\PayCard.g.i.cs" />
+    <Compile Include="obj\Debug\ChoicePay\ChoicePay.g.cs" />
+    <Compile Include="obj\Debug\ChoicePay\ChoicePay.g.i.cs" />
+    <Compile Include="obj\Debug\Control\TitleControl.g.cs" />
+    <Compile Include="obj\Debug\Control\TitleControl.g.i.cs" />
+    <Compile Include="obj\Debug\GeneratedInternalTypeHelper.g.cs" />
+    <Compile Include="obj\Debug\GeneratedInternalTypeHelper.g.i.cs" />
+    <Compile Include="obj\Debug\MainWindow.g.cs" />
+    <Compile Include="obj\Debug\MainWindow.g.i.cs" />
+    <Compile Include="obj\Debug\Order\OrderPage.g.i.cs" />
+    <Compile Include="obj\Debug\PayPage\PayPage.g.i.cs" />
+    <Compile Include="obj\Debug\SheckSheck-Kiosk_Content.g.i.cs" />
+    <Compile Include="obj\Debug\View\DiningAreaView.g.cs" />
+    <Compile Include="obj\Debug\View\DiningAreaView.g.i.cs" />
+    <Compile Include="obj\Debug\View\OrderView.g.cs" />
+    <Compile Include="obj\Debug\View\OrderView.g.i.cs" />
+    <Compile Include="obj\Debug\View\PaymentView.g.cs" />
+    <Compile Include="obj\Debug\View\PaymentView.g.i.cs" />
+    <Compile Include="obj\Debug\View\TableView.g.cs" />
+    <Compile Include="obj\Debug\View\TableView.g.i.cs" />
+    <Compile Include="Order\OrderPage.xaml.cs">
+      <DependentUpon>OrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PayPage\PayPage.xaml.cs">
+      <DependentUpon>PayPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Util\DBConnection.cs" />
     <Compile Include="ViewModel\OrderFoodViewModel.cs" />
     <Compile Include="ViewModel\OrderViewModel.cs" />
@@ -138,6 +170,10 @@
     <Compile Include="View\TableView.xaml.cs">
       <DependentUpon>TableView.xaml</DependentUpon>
     </Compile>
+    <Page Include="CardPay\PayCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ChoicePay\ChoicePay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -164,6 +200,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Order\OrderPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PayPage\PayPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\DiningAreaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -202,6 +246,7 @@
     <None Include=".vs\ProjectSettings.json" />
     <None Include=".vs\slnx.sqlite" />
     <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="bin\Debug\SheckSheck-Kiosk.exe.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -220,6 +265,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\SheckSheck-Kiosk\v16\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\FoodImage\ChiknShack.jpg" />
@@ -230,6 +277,40 @@
     <Resource Include="Assets\FoodImage\ShackStack.jpg" />
     <Resource Include="Assets\FoodImage\Shroom.jpg" />
     <Resource Include="Assets\FoodImage\SmokeShack.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AForge.dll" />
+    <Content Include="bin\Debug\AForge.Imaging.dll" />
+    <Resource Include="bin\Debug\AForge.Imaging.xml" />
+    <Content Include="bin\Debug\AForge.Math.dll" />
+    <Resource Include="bin\Debug\AForge.Math.xml" />
+    <Content Include="bin\Debug\AForge.Video.DirectShow.dll" />
+    <Resource Include="bin\Debug\AForge.Video.DirectShow.xml" />
+    <Content Include="bin\Debug\AForge.Video.dll" />
+    <Resource Include="bin\Debug\AForge.Video.xml" />
+    <Resource Include="bin\Debug\AForge.xml" />
+    <Content Include="bin\Debug\DirectShowLib-2005.dll" />
+    <Content Include="bin\Debug\EVRPresenter32.dll" />
+    <Content Include="bin\Debug\EVRPresenter64.dll" />
+    <Content Include="bin\Debug\KQRCode.dll" />
+    <Content Include="bin\Debug\KQRCode.pdb" />
+    <Content Include="bin\Debug\MaterialDesignColors.dll" />
+    <Content Include="bin\Debug\MaterialDesignColors.pdb" />
+    <Content Include="bin\Debug\MaterialDesignThemes.Wpf.dll" />
+    <Content Include="bin\Debug\MaterialDesignThemes.Wpf.pdb" />
+    <Resource Include="bin\Debug\MaterialDesignThemes.Wpf.xml" />
+    <Content Include="bin\Debug\MessagingToolkit.QRCode.dll" />
+    <Content Include="bin\Debug\MySqlConnector.dll" />
+    <Resource Include="bin\Debug\MySqlConnector.xml" />
+    <Content Include="bin\Debug\SheckSheck-Kiosk.exe" />
+    <Content Include="bin\Debug\SheckSheck-Kiosk.pdb" />
+    <Content Include="bin\Debug\System.Buffers.dll" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.dll" />
+    <Resource Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="bin\Debug\zxing.dll" />
+    <Content Include="bin\Debug\zxing.presentation.dll" />
+    <Resource Include="bin\Debug\zxing.presentation.xml" />
+    <Resource Include="bin\Debug\zxing.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

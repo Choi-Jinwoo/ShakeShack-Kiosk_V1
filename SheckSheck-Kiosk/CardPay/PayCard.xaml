@@ -10,7 +10,7 @@
     
 
     <Grid>
-        <qrcode:KQRWebCam x:Name="webcam" Margin="12" QrDecoded="webcam_QrDecoded" />
+        <qrcode:KQRCode x:Name="webcam" Margin="12" QrDecoded="webcam_QrDecoded" />
         <TextBox x:Name="tbRecog" Margin="12,12,12,12" Text="QR코드" Height="30" VerticalAlignment="Bottom" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center">
         </TextBox>
 
