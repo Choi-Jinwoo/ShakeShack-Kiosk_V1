@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SheckSheck_Kiosk.Order.Model
+namespace SheckSheck_Kiosk.Model
 {
     class Category
     {

@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace SheckSheck_Kiosk.Common
+namespace SheckSheck_Kiosk.Control
 {
     /// <summary>
     /// TitleControl.xaml에 대한 상호 작용 논리
@@ -24,19 +24,21 @@ namespace SheckSheck_Kiosk.Common
         public TitleControl()
         {
             InitializeComponent();
-            clock.Content = DateTime.Now.ToString();
+            lbClock.Content = DateTime.Now.ToString();
+            Loaded += TitleControl_Loaded;
+        }
+
+        private void TitleControl_Loaded(object sender, RoutedEventArgs e)
+        {
             SetClockEvent();
         }
 
-        /// <summary>
-        /// Clock의 이벤트 설정
-        /// </summary>
         private void SetClockEvent()
         {
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += new EventHandler((object sender, EventArgs e) => {
-                clock.Content = DateTime.Now.ToString();
+                lbClock.Content = DateTime.Now.ToString();
             });
             timer.Start();
         }
