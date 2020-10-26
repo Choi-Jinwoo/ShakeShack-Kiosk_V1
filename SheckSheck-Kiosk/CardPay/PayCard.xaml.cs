@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using SheckSheck_Kiosk.Order;
+using System.Windows.Controls;
 
 namespace SheckSheck_Kiosk.CardPay
 {
@@ -13,7 +14,16 @@ namespace SheckSheck_Kiosk.CardPay
             webcam.CameraIndex = 0;
         }
         private void webcam_QrDecoded(object sender, string e) { 
-            tbRecog.Text = e; 
+            tbRecog.Text = e;
+            if (NavigationService.CanGoForward)
+            {
+                NavigationService.GoForward();
+            }
+            else
+            {
+                OrderPage orderPage = new OrderPage();
+                NavigationService.Navigate(orderPage);
+            }
         }
 
        

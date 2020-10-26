@@ -51,7 +51,7 @@ namespace SheckSheck_Kiosk.Order
             }
             else
             {
-            PayCard payCard = new PayCard();
+                PayCard payCard = new PayCard();
                 NavigationService.Navigate(payCard);
             }
         }

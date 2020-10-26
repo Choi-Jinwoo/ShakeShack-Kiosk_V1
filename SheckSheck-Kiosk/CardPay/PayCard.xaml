@@ -11,7 +11,7 @@
 
     <Grid>
         <qrcode:KQRWebCam x:Name="webcam" Margin="12" QrDecoded="webcam_QrDecoded" />
-        <TextBox x:Name="tbRecog" Margin="12,12,12,12" Text="인식된 값이 여기에 나온단다" Height="30" VerticalAlignment="Bottom" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center">
+        <TextBox x:Name="tbRecog" Margin="12,12,12,12" Text="QR코드" Height="30" VerticalAlignment="Bottom" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center">
         </TextBox>
 
 
