@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ﻿using System;
+=======
+﻿using SheckSheck_Kiosk.Home;
+using System;
+>>>>>>> feat/home
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +17,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
 
 namespace SheckSheck_Kiosk
 {
@@ -24,6 +28,11 @@ namespace SheckSheck_Kiosk
         public MainWindow()
         {
             InitializeComponent();
+<<<<<<< HEAD
+=======
+            HomePage homePage = new HomePage();
+            this.Content = homePage;
+>>>>>>> feat/home
         }
     }
 }

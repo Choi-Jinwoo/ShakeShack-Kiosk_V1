@@ -175,12 +175,16 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ChoicePay\ChoicePay.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Control\TitleControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Home\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -195,6 +199,9 @@
     </Compile>
     <Compile Include="Control\TitleControl.xaml.cs">
       <DependentUpon>TitleControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Home\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -243,10 +250,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+<<<<<<< HEAD
     <None Include=".vs\ProjectSettings.json" />
     <None Include=".vs\slnx.sqlite" />
     <None Include=".vs\VSWorkspaceState.json" />
     <None Include="bin\Debug\SheckSheck-Kiosk.exe.config" />
+=======
+>>>>>>> feat/home
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -257,13 +267,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="ChoicePay\logo.png" />
+    <Resource Include="Assets\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\home-icon.png" />
-    <Resource Include="Assets\logo.png" />
+    <Folder Include="Assets\media\" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Folder Include=".vs\SheckSheck-Kiosk\v16\" />
     <Folder Include="bin\Release\" />
     <Folder Include="Connected Services\" />
@@ -311,6 +327,9 @@
     <Content Include="bin\Debug\zxing.presentation.dll" />
     <Resource Include="bin\Debug\zxing.presentation.xml" />
     <Resource Include="bin\Debug\zxing.xml" />
+=======
+    <Resource Include="Home\logo.png" />
+>>>>>>> feat/home
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
