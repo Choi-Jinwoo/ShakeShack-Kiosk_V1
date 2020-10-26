@@ -4,16 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        xmlns:common="clr-namespace:SheckSheck_Kiosk.Common"
+        xmlns:common="clr-namespace:SheckSheck_Kiosk.Control"
         Title="MainWindow" Height="450" Width="800">
 
-    <Grid>
-        <Frame Name="frame" Grid.Row="1" NavigationUIVisibility="Hidden" Source="ChoicePay/ChoicePay.xaml"></Frame>
 
-        
+    <Grid>
         <StackPanel>
             <common:TitleControl />
-           
+            <Frame Source="/View/OrderView.xaml"
+                   NavigationUIVisibility="Hidden"></Frame>
         </StackPanel>
     </Grid>
 </Window>
